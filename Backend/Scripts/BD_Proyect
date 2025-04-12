@@ -1,0 +1,99 @@
+-- Tabla: Hotel
+CREATE TABLE Hotel (
+    ID_Hotel SERIAL PRIMARY KEY,
+    Nombre VARCHAR(100),
+    Direccion VARCHAR(200),
+    Telefono VARCHAR(20)
+);
+
+-- Tabla: Habitacion
+CREATE TABLE Habitacion (
+    ID_Habitacion SERIAL PRIMARY KEY,
+    Precio NUMERIC(10, 2),
+    Estado VARCHAR(20),
+    Tipo VARCHAR(50),
+    ID_Hotel INT,
+    FOREIGN KEY (ID_Hotel) REFERENCES Hotel(ID_Hotel)
+);
+
+-- Tabla: Huesped
+CREATE TABLE Huesped (
+    ID_Huesped SERIAL PRIMARY KEY,
+    Nombre VARCHAR(100),
+    Apellido VARCHAR(100),
+    Run VARCHAR(20),
+    Telefono VARCHAR(20),
+    Ciudad VARCHAR(100),
+    Email VARCHAR(100)
+);
+
+-- Tabla: Reserva
+CREATE TABLE Reserva (
+    ID_Reserva SERIAL PRIMARY KEY,
+    Fecha_Entrada DATE,
+    Fecha_Salida DATE,
+    Estado VARCHAR(50),
+    ID_Huesped INT,
+    ID_Habitacion INT,
+    FOREIGN KEY (ID_Huesped) REFERENCES Huesped(ID_Huesped),
+    FOREIGN KEY (ID_Habitacion) REFERENCES Habitacion(ID_Habitacion)
+);
+
+-- Tabla: Pago
+CREATE TABLE Pago (
+    ID_Pago SERIAL PRIMARY KEY,
+    Monto NUMERIC(10, 2),
+    Fecha_Pago DATE,
+    ID_Reserva INT,
+    FOREIGN KEY (ID_Reserva) REFERENCES Reserva(ID_Reserva)
+);
+
+-- Tabla: Factura
+CREATE TABLE Factura (
+    ID_Factura SERIAL PRIMARY KEY,
+    Fecha_Emision DATE,
+    Numero VARCHAR(50),
+    ID_Pago INT,
+    FOREIGN KEY (ID_Pago) REFERENCES Pago(ID_Pago)
+);
+
+-- Tabla: Opinion
+CREATE TABLE Opinion (
+    ID_Opinion SERIAL PRIMARY KEY,
+    Comentario TEXT,
+    Clasificacion INT,
+    Fecha DATE,
+    ID_Reserva INT,
+    FOREIGN KEY (ID_Reserva) REFERENCES Reserva(ID_Reserva)
+);
+
+-- Tabla: Servicio_Transporte
+CREATE TABLE Servicio_Transporte (
+    ID_Servicio_Transporte SERIAL PRIMARY KEY,
+    Tipo_Servicio VARCHAR(50),
+    Destino VARCHAR(100),
+    Costo NUMERIC(10, 2),
+    Fecha DATE,
+    ID_Reserva INT,
+    FOREIGN KEY (ID_Reserva) REFERENCES Reserva(ID_Reserva)
+);
+
+-- Tabla: Servicio_Lavanderia
+CREATE TABLE Servicio_Lavanderia (
+    ID_Servicio_Lavanderia SERIAL PRIMARY KEY,
+    Tipo_Prenda VARCHAR(100),
+    Costo NUMERIC(10, 2),
+    Fecha_Entrega DATE,
+    ID_Reserva INT,
+    FOREIGN KEY (ID_Reserva) REFERENCES Reserva(ID_Reserva)
+);
+
+-- Tabla: Servicio_Habitacion
+CREATE TABLE Servicio_Habitacion (
+    ID_Servicio_Habitacion SERIAL PRIMARY KEY,
+    Descripcion TEXT,
+    Costo NUMERIC(10, 2),
+    Fecha_Hora TIMESTAMP,
+    ID_Reserva INT,
+    FOREIGN KEY (ID_Reserva) REFERENCES Reserva(ID_Reserva)
+);
