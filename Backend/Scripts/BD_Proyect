@@ -25,6 +25,7 @@ CREATE TABLE Huesped (
     Telefono VARCHAR(20),
     Ciudad VARCHAR(100),
     Email VARCHAR(100)
+    Clave VARCHAR(32)
 );
 
 -- Tabla: Reserva

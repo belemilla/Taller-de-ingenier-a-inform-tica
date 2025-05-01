@@ -1,0 +1,118 @@
+/* Estilo General */
+
+*{
+  margin: 0;
+  padding: 0; 
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  overflow:hidden;
+  
+}
+
+/* Header */
+
+.header {
+  display: flex;                   /* Menu Horizontal */
+  justify-content: center;         /* 🔁 cambia space-between por center */
+  align-items: center;             /* items al centro */
+  gap: 100px;                      /* separación entre secciones del header */
+  background: transparent;         /* fondo visible */
+  padding: 20px 50px;
+  position: absolute;              /* header sobrepuesto */
+  width: 100%;                     /* ancho */
+  z-index: 10;
+  color: white;
+}
+
+
+.logo {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.logo span {
+  color: #ebeff0;
+}
+
+.nav-links {
+  list-style: none;                /* sin estilo */
+  display: flex;                   /* horizonal */
+  gap: 50px;                       /* separacion items */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: rgb(232, 219, 219);
+  font-weight:bold;
+}
+
+.right-nav {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.telefono {
+  background: #2563eb;
+  padding: 8px 14px;
+  border-radius: 20px;
+}
+
+.btn-login {
+  background: #3b82f6;
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Estilo seccion Principal*/
+.main {
+  height: 100vh;
+  background: url('../img/fondo1.jpg') center/cover no-repeat;
+  /* Centra la imagen y se ajusta para cubrir toda el área sin distorsión.*/
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.main::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.main-content {
+  position: relative;
+  z-index: 2;
+}
+
+.title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 64px;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 18px;
+  margin: 10px 0 30px;
+}
+
+.btn-primary {
+  padding: 12px 24px;
+  background: #3b82f6;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+}
