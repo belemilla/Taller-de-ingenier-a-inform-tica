@@ -3,15 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog</title>
-<link rel="stylesheet" href="../css/style_principal.css">
+<title>Pagina Principal</title>
+<link rel="stylesheet" href="../../css/style_principal.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <header class="header">
-    <div class="logo">Y <span>Hotel</span></div>
+
+    <div class="logo">Panel <span>Administrativo</span></div>
     <nav>
     <ul class="nav-links">
         <li><a href="index.html">Inicio</a></li>
@@ -25,9 +26,8 @@
     <span class="telefono">+51 900 897 537</span>
     <a href="../php/login/login.php" class="btn-login">Login ➜</a>
     </div>
+    
 </header>
-
-
 
 
 </body>

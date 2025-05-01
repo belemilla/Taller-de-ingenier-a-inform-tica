@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pagina Principal</title>
+  <title>Panel Administrador</title>
   <link rel="stylesheet" href="../css/style_principal.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
     <div class="logo">Y <span>Hotel</span></div>
     <nav>
       <ul class="nav-links">
-        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html">I</a></li>
         <li><a href="habitaciones.html">Habitaciones</a></li>
         <li><a href="servicios.html">Servicios</a></li>
         <li><a href="blog.html">Blog</a></li>
