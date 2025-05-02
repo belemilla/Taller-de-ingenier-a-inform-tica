@@ -1,6 +1,6 @@
 <?php
 include("../conexion.php");     // Incluir conexion
-session_start();               // Iniciar seccion
+session_start();               // Iniciar seccion para manejar variables "$_SESSION"
 
 $mensaje = "";
 
@@ -50,7 +50,7 @@ if (!empty($_POST["btningresar"])) {                  //cuando se preciona el bo
                 if ($usuario["rol"] === "admin") {
                     header("Location: ../admin/panel_admin.php");
                 } else {
-                    header("Location: ../huesped/panel_huesped.php");
+                    header("Location:");
                 }
                 exit();
             } else {
@@ -88,7 +88,6 @@ if (!empty($_POST["btningresar"])) {                  //cuando se preciona el bo
     </ul>
   </nav>
   <div class="right-nav">
-    <span class="telefono">+51 900 897 537</span>
     <a href="login.php" class="btn-login">Login ➜</a>
   </div>
 
