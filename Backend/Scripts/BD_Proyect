@@ -13,6 +13,7 @@ CREATE TABLE Habitacion (
     Estado VARCHAR(20),
     Tipo VARCHAR(50),
     ID_Hotel INT,
+    imagen VARCHAR(255),
     FOREIGN KEY (ID_Hotel) REFERENCES Hotel(ID_Hotel)
 );
 
@@ -138,3 +139,20 @@ INSERT INTO administrador (id_usuario, nombre, email) VALUES
 INSERT INTO huesped (id_usuario, nombre, email, telefono) VALUES 
 (3, 'Maria', 'maria@husped.com', '900123001'),
 (4, 'Carlos', 'carlos@huesped.com', '900123002');
+
+-- Hotel
+INSERT INTO Hotel (nombre, direccion, Telefono) VALUES
+('Rambagh Palace', 'Jaipur, India', '979722277'),
+('Hotel Colline de France', 'Isla Bolifushi, Maldivas', '979722288'),
+('JW Marriott Marquis Hotel', 'Dubai, Emiratos Árabes Unidos', '979722299');
+
+-- Habitacion
+INSERT INTO Habitacion (Precio, Estado, Tipo, ID_Hotel,imagen) VALUES
+(90.00,  'Disponible', 'Económica', 1,'habitacion_economica.jpg'),
+(120.00, 'Disponible', 'Individual', 1,'habitacion_individual_1.jpg'),
+(110.00, 'Disponible', 'Individual', 2,'habitacion_individual_2.jpg'),
+(150.00, 'Ocupada', 'Doble', 1,'habitacion_doble.jpg'),
+(160.00, 'Disponible', 'Doble', 3,'habitacion_doble_2.jpg'),
+(180.00, 'Mantenimiento', 'Matrimonial', 2,'habitacion_matrimonial.jpg'),
+(200.00, 'Disponible', 'Suite', 1,'habitacion_suite.jpg'),
+(250.00, 'Ocupada', 'Suite Lujo', 3,'habitacion_suite_lujo.jpg');
